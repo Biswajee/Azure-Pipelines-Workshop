@@ -1,0 +1,14 @@
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - hello-world-exercise/hello-world.yaml
+
+pool:
+  vmImage: "ubuntu-20.04"
+
+steps:
+- bash: echo "Hello world"
+  displayName: Displays message
