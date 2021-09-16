@@ -11,4 +11,4 @@ pool:
   vmImage: "ubuntu-20.04"
 
 steps:
-- template: hello-world-exercise/templates/hello-world-template.yaml
+- template: templates/hello-world-template.yaml

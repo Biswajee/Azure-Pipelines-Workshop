@@ -11,4 +11,4 @@ pool:
   vmImage: "ubuntu-20.04"
 
 steps:
-- template: hello-world-exercise/templates/add-two-numbers-exercise-template.yaml
+- template: templates/add-two-numbers-exercise-template.yaml
