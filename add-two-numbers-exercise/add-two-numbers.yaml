@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - add-two-numbers-exercise/add-two-numbers-exercise-templated.yaml
+
+pool:
+  vmImage: "ubuntu-20.04"
+
+variables:
+  firstNumber: 6
+  secondNumber: 3
+
+steps:
+- bash: expr $(firstNumber) + $(secondNumber)
+  displayName: Compute sum

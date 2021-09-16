@@ -1,1 +1,9 @@
 parameters:
+- name: firstNumber
+  type: number
+- name: secondNumber
+  type: number
+
+steps:
+- bash: expr ${{ parameters.firstNumber }} + ${{ parameters.secondNumber }}
+  displayName: Compute sum

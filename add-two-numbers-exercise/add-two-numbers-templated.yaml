@@ -1,0 +1,14 @@
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - add-two-numbers-exercise/templates/
+    - add-two-numbers-exercise/add-two-numbers-exercise-templated.yaml
+
+pool:
+  vmImage: "ubuntu-20.04"
+
+steps:
+- template: hello-world-exercise/templates/add-two-numbers-exercise-template.yaml

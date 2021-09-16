@@ -1,0 +1,14 @@
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - hello-world-exercise/templates/
+    - hello-world-exercise/hello-world-templated.yaml
+
+pool:
+  vmImage: "ubuntu-20.04"
+
+steps:
+- template: hello-world-exercise/templates/hello-world-template.yaml
