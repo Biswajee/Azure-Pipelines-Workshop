@@ -12,3 +12,6 @@ pool:
 
 steps:
 - template: templates/add-two-numbers-exercise-template.yaml
+  parameters:
+    firstNumber: 6
+    secondNumber: 3
