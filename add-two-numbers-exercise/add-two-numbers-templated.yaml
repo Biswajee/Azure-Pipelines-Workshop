@@ -5,13 +5,13 @@ trigger:
   paths:
     include:
     - add-two-numbers-exercise/templates/
-    - add-two-numbers-exercise/add-two-numbers-exercise-templated.yaml
+    - add-two-numbers-exercise/add-two-numbers-templated.yaml
 
 pool:
   vmImage: "ubuntu-20.04"
 
 steps:
-- template: templates/add-two-numbers-exercise-template.yaml
+- template: templates/add-two-numbers-template.yaml
   parameters:
     firstNumber: 6
     secondNumber: 3
