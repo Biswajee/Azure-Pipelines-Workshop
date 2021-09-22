@@ -1,9 +1,15 @@
+# the pipeline template uses parameters to receive
+# values inside the pipeline. These values can be referred
+# in the pipeline template as ${{parameters.VARIABLE_NAME}}
 parameters:
 - name: firstNumber
   type: number
+  # we can add a default value to a parameter variable using the 'default' label 
 - name: secondNumber
   type: number
 
+# pipeline execution happens in steps and each step can
+# be described like below.
 steps:
 - bash: expr ${{ parameters.firstNumber }} + ${{ parameters.secondNumber }}
   displayName: Compute sum

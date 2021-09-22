@@ -1,4 +1,7 @@
+# triggers define how the pipeline can be executed.
 trigger:
+  # pipelines will trigger when changes are observed
+  # in the following included branches and included paths.
   branches:
     include:
     - master
@@ -7,8 +10,15 @@ trigger:
     - hello-world-exercise/templates/
     - hello-world-exercise/hello-world-templated.yaml
 
+# the pool decides the agent the pipeline execution will use
+# there are of two types: Microsoft-hosted agents and self-hosted agents.
 pool:
   vmImage: "ubuntu-20.04"
 
+# pipeline execution happens in steps and each step can
+# be described like below. There are also soms advanced concepts
+# like stages, jobs, parallel execution which we will not cover here.
 steps:
+# we can reference a pipeline template using the 'template' task.
+# the pipeline template must be present at the path provided to the template task.
 - template: templates/hello-world-template.yaml

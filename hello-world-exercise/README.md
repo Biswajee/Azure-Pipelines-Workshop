@@ -5,7 +5,7 @@ This exercise has two parts.
 1. Creating and executing our first azure pipeline
 2. Executing our first pipeline template
 
-## Pipelines execution
+## Pipeline execution
 
 In order to run your first pipeline for the workshop, please click the
 pipelines icon in the azure devops project space.

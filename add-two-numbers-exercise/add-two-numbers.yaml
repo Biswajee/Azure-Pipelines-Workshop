@@ -1,4 +1,7 @@
+# triggers define how the pipeline can be executed
 trigger:
+  # pipelines will trigger when changes are observed
+  # in the following included branches and included paths
   branches:
     include:
     - master
@@ -6,13 +9,19 @@ trigger:
     include:
     - add-two-numbers-exercise/add-two-numbers-exercise-templated.yaml
 
+# the pool decides the agent the pipeline execution will use
+# there are of two types: Microsoft-hosted agents and self-hosted agents
 pool:
   vmImage: "ubuntu-20.04"
 
+# we can define pipeline variables for values which need to be
+# modified frequently or used frequently in various steps 
 variables:
   firstNumber: 6
   secondNumber: 3
 
+# pipeline execution happens in steps and each step can
+# be described like below.
 steps:
 - bash: expr $(firstNumber) + $(secondNumber)
   displayName: Compute sum

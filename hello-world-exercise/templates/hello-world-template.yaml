@@ -1,3 +1,5 @@
+# pipeline execution happens in steps and each step can
+# be described like below.
 steps:
 - bash: echo "Hello world"
   displayName: Displays message

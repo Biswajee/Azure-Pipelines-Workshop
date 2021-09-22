@@ -1,4 +1,7 @@
+# triggers define how the pipeline can be executed
 trigger:
+  # pipelines will trigger when changes are observed
+  # in the following included branches and included paths
   branches:
     include:
     - master
@@ -6,9 +9,14 @@ trigger:
     include:
     - hello-world-exercise/hello-world.yaml
 
+# the pool decides the agent the pipeline execution will use
+# there are of two types: Microsoft-hosted agents and self-hosted agents
 pool:
   vmImage: "ubuntu-20.04"
 
+# pipeline execution happens in steps and each step can
+# be described like below. There are also soms advanced concepts
+# like stages, jobs, parallel execution which we will not cover here
 steps:
 - bash: echo "Hello world"
   displayName: Displays message
