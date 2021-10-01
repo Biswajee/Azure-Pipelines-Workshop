@@ -17,3 +17,18 @@ Ensure that the project visibility is set to private for the projects created in
 your organization.
 
 ![Private project settings](https://raw.githubusercontent.com/Biswajee/Azure-DevOps-Extensions-Workshop/master/demo-images/project-visibility.png)
+
+## FAQ
+
+1. Why is a free parallelism request necessary?
+
+    In [Release 183](https://docs.microsoft.com/en-us/azure/devops/release-notes/2021/sprint-183-update#change-in-process-for-obtaining-free-pipelines-grant-in-public-projects), Microsoft stated the below reasons for adding restrictions on free pipeline use as follows:
+
+    > Over the past few months, the situation has gotten substantially worse, with a high percentage of
+    > new public projects in Azure DevOps being used for crypto mining and other activities we classify
+    > as abusive. In addition to taking an increasing amount of energy from the team, this puts our hosted
+    > agent pools under stress and degrades the experience of all our users – both open-source and paid.
+
+    Hence, a free parallelism request is necessary to execute the pipelines during the workshop.
+    In case, you already have a working pipeline in your personal Azure DevOps organization, you
+    may skip filling the above request form.
