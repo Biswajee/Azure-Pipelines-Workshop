@@ -14,19 +14,26 @@ This repository contains modules for the workshop on creating CI/CD pipelines us
 
 4. Create a repository in the first project space for your extension code.
 
-5. Clone the repository code and delete the current git remote using below steps.
+5. Import the repository into your Azure repository
 (We will upload the same code to the azure repository).
 
-    ```shell
-    # Git clone the repository
-    git clone https://github.com/Biswajee/Azure-Pipelines-Workshop.git
+    + Click the `Import` button in the new repository window and add
+        the git url of the current repository in the **Clone URL** field.
 
-    # Remove the remote url for the cloned repo
-    git remote remove origin
+        <img src='images/importing-repository.png' width='300px' />
 
-    # Add the new remote url from your azure devops extension repository
-    git remote add origin https://<OrganizationName>@dev.azure.com/<OrganizationName>/<ProjectName>/_git/<AzureRepositoryName>
-    git push -u origin --all
-    ```
+    + Using the command line:
+
+        ```shell
+        # Git clone the repository
+        git clone https://github.com/Biswajee/Azure-Pipelines-Workshop.git
+
+        # Remove the remote url for the cloned repo
+        git remote remove origin
+
+        # Add the new remote url from your azure devops extension repository
+        git remote add origin https://<OrganizationName>@dev.azure.com/<OrganizationName>/<ProjectName>/_git/<AzureRepositoryName>
+        git push -u origin --all
+        ```
 
 6. Check whether the code you've pushed got successfully updated in the azure devops respository.
