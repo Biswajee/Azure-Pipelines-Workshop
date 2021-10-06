@@ -1,0 +1,38 @@
+# triggers define how the pipeline can be executed.
+trigger:
+  # pipelines will trigger when changes are observed
+  # in the following included branches and included paths.
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - multiple-operations-exercise/templates/
+    - multiple-operations-exercise/multiple-operations-templated.yaml
+
+parameters:
+- name: action
+  displayName: 'Action to be performed'
+  type: string
+  default: none
+  values:
+  - Add
+  - Substract
+  - Multiply
+  - Divide
+
+# the pool decides the agent the pipeline execution will use
+# there are of two types: Microsoft-hosted agents and self-hosted agents.
+pool:
+  vmImage: "ubuntu-20.04"
+
+# pipeline execution happens in steps and each step can
+# be described like below.
+steps:
+# we can reference a pipeline template using the 'template' task.
+# the pipeline template must be present at the path provided to the template task.
+- template: templates/multiple-operations-template.yaml
+  parameters:
+    action: ${{ parameters.action }}
+    firstNumber: 6
+    secondNumber: 3
