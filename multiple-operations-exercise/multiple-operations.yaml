@@ -11,12 +11,12 @@ trigger:
 
 parameters:
 - name: action
-  displayName: 'Action to be performed'
+  displayName: Operation to be performed
   type: string
   default: none
   values:
   - Add
-  - Substract
+  - Subtract
   - Multiply
   - Divide
 
@@ -36,3 +36,16 @@ pool:
 steps:
 - bash: expr $(firstNumber) + $(secondNumber)
   displayName: Compute ${{ parameters.action }} operation
+  condition: eq(variables['Add'], 'true')
+
+- bash: expr $(firstNumber) - $(secondNumber)
+  displayName: Compute ${{ parameters.action }} operation
+  condition: eq(variables['Subtract'], 'true')
+
+- bash: expr $(firstNumber) * $(secondNumber)
+  displayName: Compute ${{ parameters.action }} operation
+  condition: eq(variables['Multiply'], 'true')
+
+- bash: expr $(firstNumber) / $(secondNumber)
+  displayName: Compute ${{ parameters.action }} operation
+  condition: eq(variables['Divide'], 'true')
