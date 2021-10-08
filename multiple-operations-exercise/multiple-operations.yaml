@@ -42,7 +42,7 @@ steps:
   displayName: Compute subtract operation
   condition: eq('${{ parameters.action }}', 'Subtract')
 
-- bash: expr $(firstNumber) * $(secondNumber)
+- bash: expr $(firstNumber) \* $(secondNumber)
   displayName: Compute multiply operation
   condition: eq('${{ parameters.action }}', 'Multiply')
 
