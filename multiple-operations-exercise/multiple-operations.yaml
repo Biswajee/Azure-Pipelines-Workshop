@@ -35,17 +35,17 @@ pool:
 # be described like below.
 steps:
 - bash: expr $(firstNumber) + $(secondNumber)
-  displayName: Compute ${{ parameters.action }} operation
-  condition: eq(variables['Add'], 'true')
+  displayName: Compute add operation
+  condition: eq(parameters.action, 'Add')
 
 - bash: expr $(firstNumber) - $(secondNumber)
-  displayName: Compute ${{ parameters.action }} operation
-  condition: eq(variables['Subtract'], 'true')
+  displayName: Compute subtract operation
+  condition: eq(parameters.action, 'Subtract')
 
 - bash: expr $(firstNumber) * $(secondNumber)
-  displayName: Compute ${{ parameters.action }} operation
-  condition: eq(variables['Multiply'], 'true')
+  displayName: Compute multiply operation
+  condition: eq(parameters.action, 'Multiply')
 
 - bash: expr $(firstNumber) / $(secondNumber)
-  displayName: Compute ${{ parameters.action }} operation
-  condition: eq(variables['Divide'], 'true')
+  displayName: Compute divide operation
+  condition: eq(parameters.action, 'Divide')
