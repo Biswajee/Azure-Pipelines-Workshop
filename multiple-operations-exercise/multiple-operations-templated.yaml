@@ -12,12 +12,12 @@ trigger:
 
 parameters:
 - name: action
-  displayName: 'Action to be performed'
+  displayName: Operation to be performed
   type: string
   default: none
   values:
   - Add
-  - Substract
+  - Subtract
   - Multiply
   - Divide
 
