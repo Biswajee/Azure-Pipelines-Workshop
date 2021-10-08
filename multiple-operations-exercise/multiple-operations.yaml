@@ -1,0 +1,51 @@
+# triggers define how the pipeline can be executed
+trigger:
+  # pipelines will trigger when changes are observed
+  # in the following included branches and included paths
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - multiple-operations-exercise/multiple-operations-templated.yaml
+
+parameters:
+- name: action
+  displayName: Operation to be performed
+  type: string
+  default: none
+  values:
+  - Add
+  - Subtract
+  - Multiply
+  - Divide
+
+# we can define pipeline variables for values which need to be
+# modified frequently or used frequently in various steps 
+variables:
+  firstNumber: 6
+  secondNumber: 3
+
+# the pool decides the agent the pipeline execution will use
+# there are of two types: Microsoft-hosted agents and self-hosted agents
+pool:
+  vmImage: "ubuntu-20.04"
+
+# pipeline execution happens in steps and each step can
+# be described like below.
+steps:
+- bash: expr $(firstNumber) + $(secondNumber)
+  displayName: Compute add operation
+  condition: eq('${{ parameters.action }}', 'Add')
+
+- bash: expr $(firstNumber) - $(secondNumber)
+  displayName: Compute subtract operation
+  condition: eq('${{ parameters.action }}', 'Subtract')
+
+- bash: expr $(firstNumber) \* $(secondNumber)
+  displayName: Compute multiply operation
+  condition: eq('${{ parameters.action }}', 'Multiply')
+
+- bash: expr $(firstNumber) / $(secondNumber)
+  displayName: Compute divide operation
+  condition: eq('${{ parameters.action }}', 'Divide')
