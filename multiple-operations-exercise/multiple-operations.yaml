@@ -36,16 +36,16 @@ pool:
 steps:
 - bash: expr $(firstNumber) + $(secondNumber)
   displayName: Compute add operation
-  condition: eq(parameters.action, 'Add')
+  condition: eq('${{ parameters.action }}', 'Add')
 
 - bash: expr $(firstNumber) - $(secondNumber)
   displayName: Compute subtract operation
-  condition: eq(parameters.action, 'Subtract')
+  condition: eq('${{ parameters.action }}', 'Subtract')
 
 - bash: expr $(firstNumber) * $(secondNumber)
   displayName: Compute multiply operation
-  condition: eq(parameters.action, 'Multiply')
+  condition: eq('${{ parameters.action }}', 'Multiply')
 
 - bash: expr $(firstNumber) / $(secondNumber)
   displayName: Compute divide operation
-  condition: eq(parameters.action, 'Divide')
+  condition: eq('${{ parameters.action }}', 'Divide')
